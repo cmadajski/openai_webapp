@@ -1,12 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/global.css' %}">
+        <link rel="stylesheet" href="{% static 'css/openai_services/index.css' %}">
     </head>
     <body>
-        <h1>OpenAI Services</h1>
-        <p><a href="/openai/completion/">Talk with GPT-3</a></p>
-        <p><a href="/">Get Transcripts for Audio Files</a></p>
-        <p><a href="/">Generate AI Images</a></p>
+        <nav>
+            <h1 id="title"><img src="{% static '/img/custom_compass.svg' %}" width="36px" height="36px"> Christian Madajski</h1>
+            <div id="nav-links">
+                    <a href="http://194.195.210.137/">Home</a>
+                    <a href="/html/projects.html">Projects</a>
+                    <a class="active" href="/openai/">OpenAI</a>
+                    <a href="https://github.com/cmadajski" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/cmadajsk" target="_blank">LinkedIn</a>
+            </div>
+        </nav>
+        <div id="nav-fadeout"></div>
+        <div id="services-container">
+            <h1>OpenAI Services</h1>
+            <p><a href="/openai/completion/">Talk with GPT-3</a></p>
+            <p><a href="/">Get Transcripts for Audio Files</a></p>
+            <p><a href="/">Generate AI Images</a></p>
+            <p><a href="/">&larr; Back to Home</a></p>
+        </div>
+        
     </body>
 </html>
