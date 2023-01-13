@@ -1,8 +1,8 @@
 <div class="completion-container">
 	<div class="completion-input">
 		<h1>Talk to GPT-3</h1>
-		<p><a href="/">&larr; Back to Services</a></p>
-		<form action="/completion/" method="post">
+		<p><a href="/openai/">&larr; Back to Services</a></p>
+		<form action="/openai/completion/" method="post">
 			{% csrf_token %}
 			<label for="engine-option" title="{{ engine_help }}">Choose an engine: </label>
 			<select id="engine-option" name="engine-option">
