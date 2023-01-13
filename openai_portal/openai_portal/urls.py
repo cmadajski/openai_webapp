@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
 	path('completion/', include('completion.urls')),
+    path('', include('openai_services.urls')),
 ]

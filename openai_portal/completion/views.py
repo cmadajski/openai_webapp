@@ -24,6 +24,5 @@ def completion(request):
 	if request.method == 'POST':
 		gpt_response = openai.Completion.create(engine=request.POST.get('engine-option'), prompt=request.POST.get('query'), max_tokens=1024, n=int(request.POST.get('num-generations')))
 		context['output'] = gpt_response.choices
-		logging.warn(context['output'])
 		context['query'] = request.POST.get('query')
 		return render(request, 'completion/completion.html', context)
