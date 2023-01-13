@@ -4,7 +4,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{% static 'css/global.css' %}">
-        <link rel="stylesheet" href="{% static 'css/openai_services/index.css' %}">
+        <link rel="stylesheet" href="{% static 'css/openai_services/completion.css' %}">
     </head>
     <body>
 		<nav>
@@ -22,7 +22,7 @@
 			<div class="completion-input">
 				<h1>Talk to GPT-3</h1>
 				<p><a href="/openai/">&larr; Back to Services</a></p>
-				<form action="/openai/completion/" method="post">
+				<form id="completion-form" action="/openai/completion/" method="post">
 					{% csrf_token %}
 					<label for="engine-option" title="{{ engine_help }}">Choose an engine: </label>
 					<select id="engine-option" name="engine-option">
