@@ -10,3 +10,8 @@ expand the scope if I feel the desire to do so. The 3 use-cases are:
 Django will be used to manage both the front-end and back-end services. The UI will
 be kept to a minimum since this app is meant to be used as a service for an
 existing website.
+
+## Using the App
+
+Although the app functionality is still WIP, what does exist for the app is currently running on a linode server
+and is available for use on [my portfolio website](http://194.195.214.161/).
