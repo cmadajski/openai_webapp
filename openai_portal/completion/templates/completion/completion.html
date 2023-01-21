@@ -8,7 +8,7 @@
     </head>
     <body>
 		<nav>
-			<h1 id="title"><img src="{% static '/img/custom_compass.svg' %}" width="36px" height="36px"> Christian Madajski</h1>
+			<h1 id="title"><img src="{% static '/img/compass_2.svg' %}" width="36px" height="36px"> Christian Madajski</h1>
 			<div id="nav-links">
 					<a href="http://194.195.210.137/">Home</a>
 					<a href="/html/projects.html">Projects</a>
@@ -23,35 +23,39 @@
 				<h1>Talk to GPT-3</h1>
 				<form id="completion-form" action="/openai/completion/" method="post">
 					{% csrf_token %}
-					<label for="engine-option">Engine: </label>
-					<select id="engine-option" name="engine-option" title="{{ engine_help }}">
-						{% for option in engine_options %}
-						{% if option == 'text-davinci-003' %}
-						<option value="{{ option }}" title="{{ option }}" selected>{{ option }}</option>
-						{% else %}
-						<option value="{{ option }}" title="{{ option }}">{{ option }}</option>
-						{% endif %}
-						{% endfor %}
-					</select><br>
-					<label for="num-generations">Number of generations: </label>
-					<select id="num-generations" name="num-generations" title="Determines how many responses GPT-3 will return. Defaults to 1 in order to conserve requests on my OpenAI account.">
-						{% for option in num_generations %}
-						<option value="{{ option }}" title="{{ option }}">{{ option }}</option>
-						{% endfor %}
-					</select><br>
-					<textarea id="query" name="query"></textarea><br>
+					<div id="form-left">
+						<label for="engine-option">Engine: </label>
+						<select id="engine-option" name="engine-option" title="{{ engine_help }}">
+							{% for option in engine_options %}
+							{% if option == 'text-davinci-003' %}
+							<option value="{{ option }}" title="{{ option }}" selected>{{ option }}</option>
+							{% else %}
+							<option value="{{ option }}" title="{{ option }}">{{ option }}</option>
+							{% endif %}
+							{% endfor %}
+						</select><br>
+						<label for="num-generations">Number of generations: </label>
+						<select id="num-generations" name="num-generations" title="Determines how many responses GPT-3 will return. Defaults to 1 in order to conserve requests on my OpenAI account.">
+							{% for option in num_generations %}
+							<option value="{{ option }}" title="{{ option }}">{{ option }}</option>
+							{% endfor %}
+						</select><br>
+					</div>
+					<div id="form-right">
+						<textarea id="query" name="query"></textarea><br>
+					</div>
 					<input type="submit" value="Submit">
 					<a href="/openai/">Cancel</a>
 				</form>
 			</div>
 			{% if request.method == 'POST' %}
 			<div class="completion-output">
-				<p><b>You asked:</b> <i>{{ query }}</i></p>
-				<ul>
+				<p class="question"><b>"{{ query }}"</b></p>
+				<ul class="answers">
 				{% for choice in output %}
-				<li><i>{{ choice.text }}</i></li>
+					<li class="answer"><i>{{ choice.text }}</i></li>
 				{% endfor %}
-			</ul>
+				</ul>
 			</div>
 			{% endif %}
 		</div>
