@@ -14,4 +14,4 @@ existing website.
 ## Using the App
 
 Although the app functionality is still WIP, what does exist for the app is currently running on a linode server
-and is available for use on [my portfolio website](http://194.195.210.137/).
+and is available for use on [my portfolio website](http://194.195.210.137/openai/).
